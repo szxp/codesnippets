@@ -8,6 +8,13 @@ import (
 )
 
 func main() {
+	err := solve()
+	if err != nil {
+		log.Fatalln(err)
+	}
+}
+
+func solve() error {
 	w := bufio.NewWriter(os.Stdout)
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -19,8 +26,8 @@ func main() {
 	}
 
 	if err := scanner.Err(); err != nil {
-		log.Fatalln(err)
+		return err
 	}
 
-	w.Flush()
+	return w.Flush()
 }
