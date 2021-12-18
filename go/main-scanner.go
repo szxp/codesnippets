@@ -14,8 +14,8 @@ func main() {
 	var s string
 	for scanner.Scan() {
 		s = scanner.Text()
-		w.Write([]byte(s))
-		w.Write([]byte("\n"))
+		w.WriteString(s)
+		w.WriteByte('\n')
 	}
 
 	if err := scanner.Err(); err != nil {
