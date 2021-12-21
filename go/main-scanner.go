@@ -18,10 +18,10 @@ func solve() error {
 	w := bufio.NewWriter(os.Stdout)
 	scanner := bufio.NewScanner(os.Stdin)
 
-	var s string
+	var b []byte
 	for scanner.Scan() {
-		s = scanner.Text()
-		w.WriteString(s)
+		b = scanner.Bytes()
+		w.Write(b)
 		w.WriteByte('\n')
 	}
 
