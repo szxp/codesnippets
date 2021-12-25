@@ -16,9 +16,9 @@ func nextInt(b []byte, i int) (val, ni int) {
 }
 
 func isDigit(c byte) bool {
-    switch c {
-        case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
-            return true
+    switch {
+    case '0' <= c && c <= '9':
+		return true
     }
     return false
 }
