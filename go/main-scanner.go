@@ -16,6 +16,8 @@ func main() {
 
 func solve() error {
 	w := bufio.NewWriter(os.Stdout)
+	defer w.Flush()
+
 	scanner := bufio.NewScanner(os.Stdin)
 
 	var b []byte
@@ -29,5 +31,5 @@ func solve() error {
 		return err
 	}
 
-	return w.Flush()
+	return nil
 }
